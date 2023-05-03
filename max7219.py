@@ -97,3 +97,6 @@ class Matrix8x8:
             for m in range(self.num):
                 self.spi.write(bytearray([_DIGIT0 + y, self.buffer[(y * self.num) + m]]))
             self.cs(1)
+            
+    def clear(self):
+        self.framebuf.fill(0)
